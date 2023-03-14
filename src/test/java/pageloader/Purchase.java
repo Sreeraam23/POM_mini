@@ -61,8 +61,9 @@ public class Purchase extends CaseTestBase{
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		placeorder.click();		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		name.sendKeys(prop.getProperty("username"));
-//		wait.until(ExpectedConditions.visibilityOf(country));
+//		wait.until(ExpectedConditions.);
 		country.sendKeys(prop.getProperty("country"));
 //		wait.until(ExpectedConditions.visibilityOf(city));
 		city.sendKeys(prop.getProperty("city"));

@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="50819" started-at="2023-03-14T22:41:21 IST" finished-at="2023-03-14T22:42:12 IST">
+  <suite name="Default suite" duration-ms="48467" started-at="2023-03-14T22:55:16 IST" finished-at="2023-03-14T22:56:04 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="50819" started-at="2023-03-14T22:41:21 IST" finished-at="2023-03-14T22:42:12 IST">
+    <test name="Default test" duration-ms="48467" started-at="2023-03-14T22:55:16 IST" finished-at="2023-03-14T22:56:04 IST">
       <class name="testscripts.CasePlaceOrder">
-        <test-method status="PASS" signature="setup()[pri:0, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="setup" is-config="true" duration-ms="6057" started-at="2023-03-14T22:41:21 IST" finished-at="2023-03-14T22:41:27 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="setup" is-config="true" duration-ms="6606" started-at="2023-03-14T22:55:16 IST" finished-at="2023-03-14T22:55:23 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="login()[pri:1, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="login" duration-ms="4157" started-at="2023-03-14T22:41:27 IST" finished-at="2023-03-14T22:41:31 IST">
+        <test-method status="PASS" signature="login()[pri:1, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="login" duration-ms="3175" started-at="2023-03-14T22:55:23 IST" finished-at="2023-03-14T22:55:26 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="additem(java.lang.String,java.lang.String)[pri:2, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="additem" duration-ms="4681" started-at="2023-03-14T22:41:31 IST" data-provider="products" finished-at="2023-03-14T22:41:36 IST">
+        <test-method status="PASS" signature="additem(java.lang.String,java.lang.String)[pri:2, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="additem" duration-ms="4350" started-at="2023-03-14T22:55:26 IST" data-provider="products" finished-at="2023-03-14T22:55:30 IST">
           <params>
             <param index="0">
               <value>
@@ -31,7 +31,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- additem -->
-        <test-method status="PASS" signature="additem(java.lang.String,java.lang.String)[pri:2, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="additem" duration-ms="4074" started-at="2023-03-14T22:41:36 IST" data-provider="products" finished-at="2023-03-14T22:41:40 IST">
+        <test-method status="PASS" signature="additem(java.lang.String,java.lang.String)[pri:2, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="additem" duration-ms="2576" started-at="2023-03-14T22:55:30 IST" data-provider="products" finished-at="2023-03-14T22:55:33 IST">
           <params>
             <param index="0">
               <value>
@@ -47,7 +47,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- additem -->
-        <test-method status="PASS" signature="additem(java.lang.String,java.lang.String)[pri:2, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="additem" duration-ms="5091" started-at="2023-03-14T22:41:40 IST" data-provider="products" finished-at="2023-03-14T22:41:45 IST">
+        <test-method status="PASS" signature="additem(java.lang.String,java.lang.String)[pri:2, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="additem" duration-ms="3760" started-at="2023-03-14T22:55:33 IST" data-provider="products" finished-at="2023-03-14T22:55:37 IST">
           <params>
             <param index="0">
               <value>
@@ -63,7 +63,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- additem -->
-        <test-method status="PASS" signature="additem(java.lang.String,java.lang.String)[pri:2, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="additem" duration-ms="3044" started-at="2023-03-14T22:41:45 IST" data-provider="products" finished-at="2023-03-14T22:41:48 IST">
+        <test-method status="PASS" signature="additem(java.lang.String,java.lang.String)[pri:2, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="additem" duration-ms="5545" started-at="2023-03-14T22:55:37 IST" data-provider="products" finished-at="2023-03-14T22:55:42 IST">
           <params>
             <param index="0">
               <value>
@@ -79,7 +79,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- additem -->
-        <test-method status="PASS" signature="additem(java.lang.String,java.lang.String)[pri:2, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="additem" duration-ms="4846" started-at="2023-03-14T22:41:48 IST" data-provider="products" finished-at="2023-03-14T22:41:53 IST">
+        <test-method status="PASS" signature="additem(java.lang.String,java.lang.String)[pri:2, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="additem" duration-ms="4417" started-at="2023-03-14T22:55:42 IST" data-provider="products" finished-at="2023-03-14T22:55:47 IST">
           <params>
             <param index="0">
               <value>
@@ -95,15 +95,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- additem -->
-        <test-method status="PASS" signature="cart()[pri:3, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="cart" duration-ms="3149" started-at="2023-03-14T22:41:53 IST" finished-at="2023-03-14T22:41:56 IST">
+        <test-method status="PASS" signature="cart()[pri:3, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="cart" duration-ms="2008" started-at="2023-03-14T22:55:47 IST" finished-at="2023-03-14T22:55:49 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cart -->
-        <test-method status="PASS" signature="del_cart()[pri:4, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="del_cart" duration-ms="126" started-at="2023-03-14T22:41:56 IST" depends-on-methods="testscripts.CasePlaceOrder.cart" finished-at="2023-03-14T22:41:56 IST">
+        <test-method status="PASS" signature="del_cart()[pri:4, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="del_cart" duration-ms="145" started-at="2023-03-14T22:55:49 IST" depends-on-methods="testscripts.CasePlaceOrder.cart" finished-at="2023-03-14T22:55:49 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- del_cart -->
-        <test-method status="PASS" signature="finalise()[pri:5, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="finalise" duration-ms="15508" started-at="2023-03-14T22:41:56 IST" finished-at="2023-03-14T22:42:12 IST">
+        <test-method status="PASS" signature="finalise()[pri:5, instance:testscripts.CasePlaceOrder@3d0f8e03]" name="finalise" duration-ms="15792" started-at="2023-03-14T22:55:49 IST" finished-at="2023-03-14T22:56:04 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalise -->
