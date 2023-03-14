@@ -18,7 +18,7 @@ import org.testng.annotations.DataProvider;
 
 import base.CaseTestBase;
 
-public class SelectItem extends CaseTestBase{
+public class Selectionpage extends CaseTestBase{
 	Alert alert;
 	WebDriverWait wait;
 	@FindBy(xpath="(//ul/li/a)[1]")
@@ -26,7 +26,7 @@ public class SelectItem extends CaseTestBase{
 	
 	@FindBy(xpath="//div/a[@class='btn btn-success btn-lg']")
 	public WebElement addtocartbtn; 
-	public SelectItem() {
+	public Selectionpage() {
 		PageFactory.initElements(driver, this);
 	}
 		

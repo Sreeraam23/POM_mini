@@ -1,7 +1,13 @@
 package pageloader;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
-
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,6 +18,7 @@ import base.CaseTestBase;
 
 public class Purchase extends CaseTestBase{
 	WebDriverWait wait;
+	Robot robot;
 	@FindBy(xpath="//button[text()='Place Order']")
 	WebElement placeorder;
 	
@@ -41,6 +48,9 @@ public class Purchase extends CaseTestBase{
 	
 	@FindBy(xpath="//h2[text()='Thank you for your purchase!']")
 	public WebElement message;
+	
+	@FindBy(xpath="//button[text()='OK']")
+	public WebElement okbtn;
 	public Purchase() {
 		PageFactory.initElements(driver, this);
 	}
@@ -50,7 +60,7 @@ public class Purchase extends CaseTestBase{
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		placeorder.click();		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		name.sendKeys(prop.getProperty("username"));
 //		wait.until(ExpectedConditions.visibilityOf(country));
 		country.sendKeys(prop.getProperty("country"));
@@ -62,9 +72,22 @@ public class Purchase extends CaseTestBase{
 		month.sendKeys(prop.getProperty("month"));
 //		wait.until(ExpectedConditions.visibilityOf(year));
 		year.sendKeys(prop.getProperty("year"));
-//		wait.until(ExpectedConditions.visibilityOf(purchase));
-		wait.until(ExpectedConditions.elementToBeClickable(purchase));
+		try {
+			robot = new Robot();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		  for (int i = 0; i < 2; i++) {
+			  robot.keyPress(KeyEvent.VK_CONTROL);
+			  robot.keyPress(KeyEvent.VK_SUBTRACT);
+			  robot.keyRelease(KeyEvent.VK_SUBTRACT);
+			  robot.keyRelease(KeyEvent.VK_CONTROL);
+			  }
+		Thread.sleep(5000);
 		purchase.click();
+		Thread.sleep(3000);
+		okbtn.click();
 		
 	}
 }

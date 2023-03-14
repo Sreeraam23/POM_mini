@@ -12,14 +12,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import base.CaseTestBase;
 
-public class Deleteitem extends CaseTestBase{
+public class OrderListDelete extends CaseTestBase{
 	public String pval_del;
 	public int del_cart_size;
 	WebDriverWait wait;
 	@FindBy(xpath="(//td/a)[2]")
 	WebElement deletebtn;
 	
-	public Deleteitem() {
+	public OrderListDelete() {
 		PageFactory.initElements(driver, this);
 	}
 

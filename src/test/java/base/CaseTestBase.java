@@ -40,9 +40,9 @@ public class CaseTestBase {
 		String browser = prop.getProperty("browser");
 		if(browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.edgedriver().setup();
-//			ChromeOptions options = new ChromeOptions();
-//			options.addArguments("--remote-allow-origins=*");
-			driver = new EdgeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+			driver = new ChromeDriver(options);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));

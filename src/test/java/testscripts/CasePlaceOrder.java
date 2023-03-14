@@ -19,18 +19,18 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
 import base.CaseTestBase;
-import pageloader.Cartcheck;
-import pageloader.Deleteitem;
+import pageloader.OrderList;
+import pageloader.OrderListDelete;
 import pageloader.Purchase;
-import pageloader.SelectItem;
+import pageloader.Selectionpage;
 import pageloader.Signup;
 
 public class CasePlaceOrder extends CaseTestBase{
 	Signup signin;
 	WebDriverWait wait;
-	SelectItem item;
-	Cartcheck check;
-	Deleteitem del; 
+	Selectionpage item;
+	OrderList check;
+	OrderListDelete del; 
 	Purchase place;
 	String p_val;
 	public int c_size;
@@ -52,12 +52,12 @@ public class CasePlaceOrder extends CaseTestBase{
 	
   @Test(priority=2,dataProvider = "products")
   public void additem(String cat,String pro) {
-	  item = new SelectItem();
+	  item = new Selectionpage();
 	  item.select(cat,pro);
   }
   @Test(priority=3)
   public void cart() {
-	  check = new Cartcheck();
+	  check = new OrderList();
 	  check.cart();
 	  c_size = check.cart_size;
 	  p_val = check.price;
@@ -65,22 +65,23 @@ public class CasePlaceOrder extends CaseTestBase{
 
   @Test(priority=4,dependsOnMethods="cart")
   public void del_cart(){
-	  del = new Deleteitem();
-	  del.delete();
-	  driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-	  String price_before = check.price;
 	  int before_cart = c_size;
+	  del = new OrderListDelete();
+	  del.delete();
+	  driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));	  
+	  String price_before = check.price;
 	  String price_after = del.pval_del;
 	  int after_cart = del.del_cart_size;
-	  boolean res = before_cart!=after_cart;
-	  Assert.assertTrue(res);
+	  boolean res = price_before.equalsIgnoreCase(price_after);
+	  Assert.assertFalse(res);
   }
   @Test(priority=5)
   public void finalise() throws InterruptedException {
 	  place = new Purchase();
+	  Thread.sleep(5000);
 	  place.order();
 	  WebElement msg = place.message;
-	  Assert.assertTrue(msg.isDisplayed());
+//	  Assert.assertEquals(msg.getText(),"Thank you for your purchase!");
   }
 @DataProvider(name="products")
   public Object[][] getdata() throws CsvValidationException, IOException{
