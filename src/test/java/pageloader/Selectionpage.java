@@ -32,6 +32,7 @@ public class Selectionpage extends CaseTestBase{
 		
 	public void select(String category,String product) {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		WebElement cat = driver.findElement(By.partialLinkText(category));
 		cat.click();
 		WebElement prod =driver.findElement(By.partialLinkText(product));
