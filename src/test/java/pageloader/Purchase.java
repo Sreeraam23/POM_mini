@@ -1,6 +1,6 @@
 package pageloader;
 
-import java.awt.AWTException;
+import java.awt.AWTException; 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
@@ -73,18 +73,18 @@ public class Purchase extends CaseTestBase{
 		month.sendKeys(prop.getProperty("month"));
 //		wait.until(ExpectedConditions.visibilityOf(year));
 		year.sendKeys(prop.getProperty("year"));
-		try {
-			robot = new Robot();
-		} catch (AWTException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		  for (int i = 0; i < 2; i++) {
-			  robot.keyPress(KeyEvent.VK_CONTROL);
-			  robot.keyPress(KeyEvent.VK_SUBTRACT);
-			  robot.keyRelease(KeyEvent.VK_SUBTRACT);
-			  robot.keyRelease(KeyEvent.VK_CONTROL);
-			  }
+//		try {
+//			robot = new Robot();
+//		} catch (AWTException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		  for (int i = 0; i < 2; i++) {
+//			  robot.keyPress(KeyEvent.VK_CONTROL);
+//			  robot.keyPress(KeyEvent.VK_SUBTRACT);
+//			  robot.keyRelease(KeyEvent.VK_SUBTRACT);
+//			  robot.keyRelease(KeyEvent.VK_CONTROL);
+//			  }
 		Thread.sleep(5000);
 		purchase.click();
 		Thread.sleep(3000);
