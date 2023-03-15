@@ -19,9 +19,9 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
 import base.CaseTestBase;
-import pageloader.OrderList;
-import pageloader.OrderListDelete;
-import pageloader.Purchase;
+import pageloader.OrderListPage;
+import pageloader.OrderListDeletePage;
+import pageloader.PurchasePage;
 import pageloader.Selectionpage;
 import pageloader.Signup;
 
@@ -29,9 +29,9 @@ public class CasePlaceOrder extends CaseTestBase{
 	Signup signin;
 	WebDriverWait wait;
 	Selectionpage item;
-	OrderList check;
-	OrderListDelete del; 
-	Purchase place;
+	OrderListPage check;
+	OrderListDeletePage del; 
+	PurchasePage place;
 	String p_val;
 	public int c_size;
 	String del_p_val;
@@ -57,7 +57,7 @@ public class CasePlaceOrder extends CaseTestBase{
   }
   @Test(priority=3)
   public void cart() {
-	  check = new OrderList();
+	  check = new OrderListPage();
 	  check.cart();
 	  c_size = check.cart_size;
 	  p_val = check.price;
@@ -66,7 +66,7 @@ public class CasePlaceOrder extends CaseTestBase{
   @Test(priority=4,dependsOnMethods="cart")
   public void del_cart(){
 	  int before_cart = c_size;
-	  del = new OrderListDelete();
+	  del = new OrderListDeletePage();
 	  del.delete();
 	  driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));	  
 	  String price_before = check.price;
@@ -77,7 +77,7 @@ public class CasePlaceOrder extends CaseTestBase{
   }
   @Test(priority=5)
   public void finalise() throws InterruptedException {
-	  place = new Purchase();
+	  place = new PurchasePage();
 	  Thread.sleep(5000);
 	  place.order();
 	  WebElement msg = place.message;

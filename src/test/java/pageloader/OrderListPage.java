@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import base.CaseTestBase;
 
-public class OrderList extends CaseTestBase {
+public class OrderListPage extends CaseTestBase {
     public String price;
     public int cart_size;
 	@FindBy(id="cartur")
@@ -21,7 +21,7 @@ public class OrderList extends CaseTestBase {
 	@FindBy(xpath="//tbody//td[2]")
 	public List<WebElement> items_in_cart;
 	
-	public OrderList() {
+	public OrderListPage() {
 		PageFactory.initElements(driver, this); 
 	}
 	

@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import base.CaseTestBase;
 
-public class Purchase extends CaseTestBase{
+public class PurchasePage extends CaseTestBase{
 	WebDriverWait wait;
 	Robot robot;
 	@FindBy(xpath="//button[text()='Place Order']")
@@ -51,7 +51,7 @@ public class Purchase extends CaseTestBase{
 	
 	@FindBy(xpath="//button[text()='OK']")
 	public WebElement okbtn;
-	public Purchase() {
+	public PurchasePage() {
 		PageFactory.initElements(driver, this);
 	}
 	
