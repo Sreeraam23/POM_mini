@@ -1,6 +1,6 @@
 package pageloader;
 
-import java.awt.AWTException; 
+import java.awt.AWTException;  
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
@@ -55,13 +55,10 @@ public class PurchasePage extends CaseTestBase{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void order() throws InterruptedException{
+	public void order() throws InterruptedException{	
 		wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-		placeorder.click();		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		name.click();
+		wait.until(ExpectedConditions.elementToBeClickable(name));
 		name.sendKeys(prop.getProperty("username"));
 //		wait.until(ExpectedConditions.);
 		country.sendKeys(prop.getProperty("country"));
@@ -73,19 +70,19 @@ public class PurchasePage extends CaseTestBase{
 		month.sendKeys(prop.getProperty("month"));
 //		wait.until(ExpectedConditions.visibilityOf(year));
 		year.sendKeys(prop.getProperty("year"));
-//		try {
-//			robot = new Robot();
-//		} catch (AWTException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		  for (int i = 0; i < 2; i++) {
-//			  robot.keyPress(KeyEvent.VK_CONTROL);
-//			  robot.keyPress(KeyEvent.VK_SUBTRACT);
-//			  robot.keyRelease(KeyEvent.VK_SUBTRACT);
-//			  robot.keyRelease(KeyEvent.VK_CONTROL);
-//			  }
-		Thread.sleep(5000);
+		try {
+			robot = new Robot();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		  for (int i = 0; i < 2; i++) {
+			  robot.keyPress(KeyEvent.VK_CONTROL);
+			  robot.keyPress(KeyEvent.VK_SUBTRACT);
+			  robot.keyRelease(KeyEvent.VK_SUBTRACT);
+			  robot.keyRelease(KeyEvent.VK_CONTROL);
+			  }
+		Thread.sleep(3000);
 		purchase.click();
 		Thread.sleep(3000);
 		okbtn.click();

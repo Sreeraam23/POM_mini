@@ -15,11 +15,9 @@ import org.testng.Assert;
 
 import base.CaseTestBase;
 
-public class Signup extends CaseTestBase{
+public class LoginPage extends CaseTestBase{
 	WebDriverWait wait;
-	@FindBy(id = "login2")
-	WebElement loginbtn;
-	
+		
 	@FindBy(id="loginusername")
 	WebElement name;
 	
@@ -32,15 +30,19 @@ public class Signup extends CaseTestBase{
 	@FindBy(id="logout2")
 	public WebElement logoutbtn;
 	
-	public Signup() {
+	public LoginPage() {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void login() throws InterruptedException {
-		loginbtn.click();
+	public void loginpage() throws InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		name.click();
 		name.sendKeys(prop.getProperty("username"));
 		password.sendKeys(prop.getProperty("password"));
+		wait.until(ExpectedConditions.elementToBeClickable(submitloginbtn));
 		submitloginbtn.click();
+		
 			
 	}
 	

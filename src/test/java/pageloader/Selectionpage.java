@@ -32,12 +32,13 @@ public class Selectionpage extends CaseTestBase{
 		
 	public void select(String category,String product) {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(1));
 		WebElement cat = driver.findElement(By.partialLinkText(category));
 		cat.click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(1));
 		WebElement prod =driver.findElement(By.partialLinkText(product));
 		prod.click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(1));
 		addtocartbtn.click();		
 		wait.until(ExpectedConditions.alertIsPresent());
 		alert = driver.switchTo().alert();

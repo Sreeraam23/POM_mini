@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testscripts.CasePlaceOrder">
+      <class name="testscripts.ExecuteFile">
         <methods>
           <include name="finalise"/>
+          <include name="additem" invocation-numbers="1"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- testscripts.CasePlaceOrder -->
+      </class> <!-- testscripts.ExecuteFile -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

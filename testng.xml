@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="testscripts.CasePlaceOrder"/>
+      <class name="testscripts.ExecuteFile"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -26,7 +26,6 @@ public class OrderListPage extends CaseTestBase {
 	}
 	
 	public void cart() {
-		cart.click();
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 		price = pricenum.getText();
 		cart_size = items_in_cart.size();

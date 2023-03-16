@@ -20,13 +20,15 @@ import com.opencsv.exceptions.CsvValidationException;
 
 import base.CaseTestBase;
 import pageloader.OrderListPage;
+import pageloader.HomePage;
 import pageloader.OrderListDeletePage;
 import pageloader.PurchasePage;
 import pageloader.Selectionpage;
-import pageloader.Signup;
+import pageloader.LoginPage;
 
-public class CasePlaceOrder extends CaseTestBase{
-	Signup signin;
+public class ExecuteFile extends CaseTestBase{
+	static HomePage home;
+	LoginPage signin;
 	WebDriverWait wait;
 	Selectionpage item;
 	OrderListPage check;
@@ -42,8 +44,10 @@ public class CasePlaceOrder extends CaseTestBase{
   }
   @Test(priority=1)
   public void login() throws InterruptedException {
-	  signin = new Signup();
-	  signin.login();
+	  home = new HomePage();
+	  home.login_func();
+	  signin = new LoginPage();
+	  signin.loginpage();
 	  WebElement logout = signin.logoutbtn;
 	  wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	  wait.until(ExpectedConditions.textToBePresentInElement(logout, "Log out"));
@@ -57,6 +61,7 @@ public class CasePlaceOrder extends CaseTestBase{
   }
   @Test(priority=3)
   public void cart() {
+	  home.viewcart();
 	  check = new OrderListPage();
 	  check.cart();
 	  c_size = check.cart_size;
@@ -65,6 +70,7 @@ public class CasePlaceOrder extends CaseTestBase{
 
   @Test(priority=4,dependsOnMethods="cart")
   public void del_cart(){
+    home.delete_cart();
 	  int before_cart = c_size;
 	  del = new OrderListDeletePage();
 	  del.delete();
@@ -77,6 +83,7 @@ public class CasePlaceOrder extends CaseTestBase{
   }
   @Test(priority=5)
   public void finalise() throws InterruptedException {
+	  home.purchase();
 	  place = new PurchasePage();
 	  Thread.sleep(5000);
 	  place.order();
